@@ -1001,7 +1001,7 @@ function StackCard({
   const [iframeReady, setIframeReady] = useState(false)
   useEffect(() => {
     if (!isFront) return
-    const t = window.setTimeout(() => setIframeReady(true), 100)
+    const t = window.setTimeout(() => setIframeReady(true), 320)
     return () => window.clearTimeout(t)
   }, [isFront])
 
@@ -1020,15 +1020,17 @@ function StackCard({
         rotateY: -depth * 11,
         zIndex: 30 - depth,
       }}
-      transition={{ type: 'spring', stiffness: 170, damping: 22, mass: 0.85 }}
+      transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
       className="absolute inset-0 rounded-2xl overflow-hidden"
       onClick={isFront ? onNext : undefined}
       whileTap={isFront ? { scale: 0.985 } : undefined}
       style={{
         background: 'rgba(255,255,255,0.02)',
         border: `1px solid ${project.color}30`,
-        boxShadow: `0 16px 38px ${project.color}14`,
+        boxShadow: `0 10px 24px ${project.color}12`,
         transformStyle: 'preserve-3d',
+        backfaceVisibility: 'hidden',
+        transform: 'translateZ(0)',
         pointerEvents: isFront ? 'auto' : 'none',
         willChange: isFront ? 'transform, opacity' : 'auto',
         cursor: isFront ? 'pointer' : 'default',
@@ -1042,7 +1044,7 @@ function StackCard({
               src={project.liveUrl}
               title={`${project.title} preview stack`}
               scrolling="no"
-              style={{ width: '100%', height: '100%', border: 'none', display: 'block', pointerEvents: 'none', filter: 'brightness(0.76)' }}
+              style={{ width: '100%', height: '100%', border: 'none', display: 'block', pointerEvents: 'none' }}
               loading="lazy"
             />
           </div>

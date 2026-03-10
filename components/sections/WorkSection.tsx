@@ -181,15 +181,17 @@ export default function WorkSection() {
                     rotateY: -depth * 11,
                     zIndex: 30 - depth,
                   }}
-                  transition={{ type: 'spring', stiffness: 170, damping: 22, mass: 0.85 }}
+                  transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
                   className="absolute inset-0 rounded-2xl overflow-hidden"
                   onClick={isFront ? goNext : undefined}
                   whileTap={isFront ? { scale: 0.985 } : undefined}
                   style={{
                     background: 'rgba(255,255,255,0.02)',
                     border: `1px solid ${p.color}30`,
-                    boxShadow: `0 16px 38px ${p.color}14`,
+                    boxShadow: `0 10px 24px ${p.color}12`,
                     transformStyle: 'preserve-3d',
+                    backfaceVisibility: 'hidden',
+                    transform: 'translateZ(0)',
                     pointerEvents: isFront ? 'auto' : 'none',
                     willChange: 'transform, opacity',
                     cursor: isFront ? 'pointer' : 'default',
