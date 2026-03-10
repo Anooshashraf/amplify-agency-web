@@ -15,7 +15,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
           smoothWheel: true,
         })
 
-        function raf(time: number) {
+        const raf = (time: number) => {
           lenis.raf(time)
           requestAnimationFrame(raf)
         }

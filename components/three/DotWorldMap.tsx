@@ -35,7 +35,7 @@ const WORLD_DOTS = [
 ]
 
 function WorldDots() {
-  const meshRef = useRef<THREE.Points>(null)
+  const meshRef = useRef<THREE.Group>(null)
   const glowRef = useRef<THREE.Points>(null)
 
   const { positions, glowPositions } = useMemo(() => {
