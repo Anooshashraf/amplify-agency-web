@@ -11,7 +11,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
     let current = 0
     intervalRef.current = setInterval(() => {
-      current += Math.floor(Math.random() * 4) + 1
+      current += Math.floor(Math.random() * 2) + 1
       if (current >= 100) {
         current = 100
         clearInterval(intervalRef.current)
@@ -21,7 +21,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         }, 400)
       }
       setCount(current)
-    }, 40)
+    }, 50)
 
     return () => clearInterval(intervalRef.current)
   }, [onComplete])
