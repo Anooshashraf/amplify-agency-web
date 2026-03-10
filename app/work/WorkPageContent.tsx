@@ -55,7 +55,7 @@ const projects = [
     title: 'NovaTech',
     category: 'Tech Agency',
     year: '2023',
-    liveUrl: '/work/NovaTech.html',
+    liveUrl: '/work/Novatech.html',
     description:
       'NovaTech is a digital innovation agency that required a website communicating cutting-edge expertise. We created a dual-accent design with deep dark surfaces, noise textures, and animated service cards that feel as technically sophisticated as the products NovaTech builds.',
     challenge: "NovaTech's previous site was template-based and failed to differentiate them in a crowded market. The site wasn't generating qualified leads.",
@@ -73,7 +73,7 @@ const projects = [
     title: 'FreshCart',
     category: 'E-Commerce',
     year: '2023',
-    liveUrl: '/work/FreshCart.html',
+    liveUrl: '/work/Freshcart.html',
     description:
       "FreshCart is a premium grocery delivery service targeting health-conscious urban customers. We built a light-theme e-commerce platform with a forest green palette — making the shopping experience feel luxurious while remaining intuitive and fast.",
     challenge: "FreshCart was losing customers at checkout. The site felt generic and didn't justify the premium pricing tier they were targeting.",

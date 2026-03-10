@@ -37,7 +37,7 @@ const projects = [
     stat1: { label: 'Lead Gen', value: '+89%' },
     stat2: { label: 'Time on Site', value: '+3.1x' },
     imgSrc: '/images/devops.jpg',
-    liveUrl: '/work/NovaTech.html',
+    liveUrl: '/work/Novatech.html',
   },
   {
     id: '04',
@@ -48,7 +48,7 @@ const projects = [
     stat1: { label: 'Cart Value', value: '+44%' },
     stat2: { label: 'Return Users', value: '67%' },
     imgSrc: '/images/ecommerce.webp',
-    liveUrl: '/work/FreshCart.html',
+    liveUrl: '/work/Freshcart.html',
   },
 ]
 
