@@ -14,6 +14,7 @@ import FAQSection from '@/components/sections/FAQSection'
 import CTASection from '@/components/sections/CTASection'
 import Footer from '@/components/ui/Footer'
 import SmoothScrollProvider from '@/components/ui/SmoothScrollProvider'
+import PricingSection from '@/components/sections/PricingSection'
 
 const Preloader = dynamic(() => import('@/components/ui/Preloader'), { ssr: false })
 const CustomCursor = dynamic(() => import('@/components/ui/CustomCursor'), { ssr: false })
@@ -60,6 +61,7 @@ export default function HomePage() {
         <TechStackSection />
         {/* <WorkSection /> */}
         <AboutSection />
+        <PricingSection />
         <TestimonialsSection />
         <FAQSection />
         <CTASection />

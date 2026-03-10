@@ -214,7 +214,7 @@ export default function AboutSection() {
       {/* Background watermark */}
       <div
         className="section-bg-text"
-        style={{ top: '50%', right: '-4%', transform: 'translateY(-50%)' }}
+        style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}
         aria-hidden
       >
         ABOUT

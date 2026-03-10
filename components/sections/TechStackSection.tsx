@@ -196,13 +196,9 @@ export default function TechStackSection() {
       style={{ background: 'var(--dark)' }}
     >
       {/* BG watermark */}
-      <div aria-hidden style={{
-        position: 'absolute', top: '50%', left: '50%',
-        transform: 'translate(-50%,-50%)',
-        fontSize: 'clamp(5rem,13vw,12rem)', fontWeight: 900,
-        color: 'rgba(255,255,255,0.012)', whiteSpace: 'nowrap',
-        userSelect: 'none', letterSpacing: '-0.04em', pointerEvents: 'none',
-      }}>TECH STACK</div>
+      <div className="section-bg-text" style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }} aria-hidden>
+        TECH STACK
+      </div>
 
       <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
 

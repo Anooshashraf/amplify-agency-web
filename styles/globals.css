@@ -157,7 +157,7 @@ body :where(p, a, li, span, small, label, input, textarea, button) {
   font-size: clamp(6rem, 18vw, 18rem);
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(245, 234, 208, 0.04);
+  -webkit-text-stroke: 1px rgba(245, 234, 208, 0.07);
   user-select: none;
   pointer-events: none;
   white-space: nowrap;
