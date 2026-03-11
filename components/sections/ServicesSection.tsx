@@ -63,7 +63,7 @@ export default function ServicesSection() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen overflow-hidden py-24"
+      className="relative min-h-screen overflow-hidden py-24 px-6 md:px-12 lg:px-20"
       style={{ background: 'var(--dark-2)' }}
     >
       {/* Background text */}
@@ -77,7 +77,7 @@ export default function ServicesSection() {
 
       <div className="section-gradient-left absolute inset-0" />
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* ── Header ─────────────────────────────────────────────────── */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">

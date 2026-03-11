@@ -31,7 +31,7 @@ export default function TeamSection() {
   return (
     <section
       ref={ref}
-      className="relative py-32 overflow-hidden"
+      className="relative py-32 overflow-hidden px-6 md:px-12 lg:px-20"
       style={{ background: 'var(--dark-2)' }}
     >
       <div className="section-bg-text" style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }} aria-hidden>
@@ -42,7 +42,7 @@ export default function TeamSection() {
         background: 'radial-gradient(ellipse at top right, rgba(26,107,60,0.07), transparent 70%)',
       }} />
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">

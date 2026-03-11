@@ -72,7 +72,7 @@ export default function WorkSection() {
     <section
       ref={sectionRef}
       id="work"
-      className="relative overflow-hidden py-28"
+      className="relative overflow-hidden py-28 px-6 md:px-12 lg:px-20"
       style={{ background: 'var(--dark-2)' }}
     >
       <div
@@ -90,7 +90,7 @@ export default function WorkSection() {
         WORK
       </div>
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}

@@ -16,7 +16,7 @@ export default function CTASection() {
   return (
     <section
       ref={ref}
-      className="relative py-32 overflow-hidden"
+      className="relative py-32 overflow-hidden px-6 md:px-12 lg:px-20"
       style={{ background: 'var(--dark-4)' }}
     >
       {/* 3D globe background */}
@@ -48,7 +48,7 @@ export default function CTASection() {
         }}
       />
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div>

@@ -299,7 +299,7 @@ export default function BeforeAfterSection() {
   return (
     <section
       ref={ref}
-      className="relative py-32 overflow-hidden"
+      className="relative py-32 overflow-hidden px-6 md:px-12 lg:px-20"
       style={{ background: 'var(--dark-3)' }}
     >
       <div className="section-bg-text" style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }} aria-hidden>
@@ -309,7 +309,7 @@ export default function BeforeAfterSection() {
         background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(26,107,60,0.06), transparent)',
       }} />
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-20">

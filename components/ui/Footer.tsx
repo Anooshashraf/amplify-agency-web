@@ -51,9 +51,9 @@ const IconClock = () => (
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-3 mb-6">
+    <div className="flex items-center gap-3 mb-3">
       <span style={{
-        fontFamily: 'var(--font-display)', fontSize: '0.7rem', fontWeight: 700,
+        fontFamily: 'var(--font-display)', fontSize: '0.65rem', fontWeight: 700,
         letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--green-bright)',
         whiteSpace: 'nowrap',
       }}>
@@ -70,7 +70,7 @@ function SocialTile({ icon, label, handle, href, color }: {
   return (
     <a
       href={href} target="_blank" rel="noopener noreferrer"
-      className="flex flex-col items-center justify-center gap-2.5 rounded-2xl p-4 transition-all duration-300 cursor-pointer"
+      className="flex flex-col items-center justify-center gap-1.5 rounded-xl p-2.5 transition-all duration-300 cursor-pointer"
       style={{
         background: 'rgba(255,255,255,0.025)',
         border: `1px solid ${color}22`,
@@ -91,17 +91,17 @@ function SocialTile({ icon, label, handle, href, color }: {
         el.style.boxShadow = 'none'
       }}
     >
-      <div className="flex items-center justify-center rounded-xl"
-        style={{ width: '46px', height: '46px', background: `${color}18`, border: `1px solid ${color}30`, color }}>
+      <div className="flex items-center justify-center rounded-lg"
+        style={{ width: '34px', height: '34px', background: `${color}18`, border: `1px solid ${color}30`, color }}>
         {icon}
       </div>
-      <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, color: 'rgba(245,234,208,0.65)' }}>
+      <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.62rem', fontWeight: 700, color: 'rgba(245,234,208,0.65)' }}>
         {label}
       </span>
       <span
         style={{
           fontFamily: 'var(--font-body)',
-          fontSize: '0.6rem',
+          fontSize: '0.55rem',
           color,
           letterSpacing: '0.03em',
           width: '100%',
@@ -120,7 +120,7 @@ function SocialTile({ icon, label, handle, href, color }: {
 function SmallSocialBtn({ icon, href }: { icon: React.ReactNode; href: string }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer"
-      className="flex items-center justify-center w-9 h-9 rounded-lg transition-all duration-250"
+      className="flex items-center justify-center w-7 h-7 rounded-lg transition-all duration-250"
       style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(34,197,94,0.14)', color: 'rgba(245,234,208,0.45)', textDecoration: 'none' }}
       onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(34,197,94,0.12)'; el.style.borderColor = 'rgba(34,197,94,0.4)'; el.style.color = 'var(--green-bright)' }}
       onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.04)'; el.style.borderColor = 'rgba(34,197,94,0.14)'; el.style.color = 'rgba(245,234,208,0.45)' }}
@@ -137,7 +137,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
       onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.color = 'rgba(245,234,208,0.4)'; el.style.paddingLeft = '0' }}
     >
       <span style={{ color: 'rgba(34,197,94,0.35)', fontSize: '0.55rem' }}>▸</span>
-      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(245,234,208,0.4)' }}>
+      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'rgba(245,234,208,0.4)' }}>
         {children}
       </span>
     </Link>
@@ -148,7 +148,7 @@ function ContactRow({ icon, children }: { icon: React.ReactNode; children: React
   return (
     <div className="flex items-start gap-3">
       <div style={{ color: 'var(--green-bright)', flexShrink: 0, marginTop: '1px' }}>{icon}</div>
-      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'rgba(245,234,208,0.45)', lineHeight: 1.65 }}>
+      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'rgba(245,234,208,0.45)', lineHeight: 1.55 }}>
         {children}
       </span>
     </div>
@@ -165,23 +165,23 @@ export default function Footer() {
       <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(34,197,94,0.45), transparent)' }} />
 
       {/* ──────────── TOP BLOCK ──────────── */}
-      <div className="px-6 md:px-12 lg:px-20 pt-16 pb-14">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="px-6 md:px-12 lg:px-20 pt-6 pb-5">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
 
           {/* 1 — About */}
           <div>
             <FooterHeading>About Us</FooterHeading>
-            <Link href="/" className="flex items-center gap-3 mb-5" style={{ textDecoration: 'none' }}>
-              <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+            <Link href="/" className="flex items-center gap-3 mb-3" style={{ textDecoration: 'none' }}>
+              <svg width="20" height="20" viewBox="0 0 100 100" fill="none">
                 <path d="M50 8L85 30L85 70L50 92L15 70L15 30Z" stroke="#22c55e" strokeWidth="3" fill="none" opacity="0.5"/>
                 <path d="M35 58L50 30L65 58" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                 <path d="M38 52L62 52" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" fill="none"/>
               </svg>
-              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cream)', fontSize: '1.1rem' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--cream)', fontSize: '0.95rem' }}>
                 Amplify
               </span>
             </Link>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(245,234,208,0.4)', lineHeight: 1.85, marginBottom: '1.5rem' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'rgba(245,234,208,0.4)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
               Established 2020, Amplify Agency is a professional web & app development studio. We build AI-driven digital products for startups and enterprises across 8+ countries.
             </p>
             <div className="flex items-center gap-2">
@@ -194,31 +194,31 @@ export default function Footer() {
 
           <div>
             <FooterHeading>Social Feeds</FooterHeading>
-            <div className="grid grid-cols-2 gap-2.5">
-              <SocialTile icon={<IconFacebook />}  label="Facebook"   handle="@amplify.com.pk" href="https://facebook.com"  color="#1877f2" />
-              <SocialTile icon={<IconLinkedin />}  label="LinkedIn"   handle="Amplify" href="https://linkedin.com"  color="#0a66c2" />
-              <SocialTile icon={<IconInstagram />}   label="Instagram" handle="@amplify.com.pk" href="https://instagram.com"   color="#e7e9ea" />
+            <div className="grid grid-cols-2 gap-2.5 mb-4">
+              <SocialTile icon={<IconFacebook />}  label="Facebook"   handle="@amplify.com.pk" href="https://facebook.com"  color="#0c853f" />
+              <SocialTile icon={<IconLinkedin />}  label="LinkedIn"   handle="Amplify" href="https://linkedin.com"  color="#0c853f" />
+              <SocialTile icon={<IconInstagram />}   label="Instagram" handle="@amplify.com.pk" href="https://instagram.com"   color="#0c853f" />
             </div>
           </div>
 
           {/* 3 — Find Us */}
           <div>
             <FooterHeading>Find Us</FooterHeading>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               <div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.4rem' }}>Office</p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.55rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.25rem' }}>Office</p>
                 <ContactRow icon={<IconPin />}> Karachi, Pakistan.</ContactRow>
               </div>
               <div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.4rem' }}>Phone</p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.55rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.25rem' }}>Phone</p>
                 <ContactRow icon={<IconPhone />}>+92 310 848 6366</ContactRow>
               </div>
               <div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.4rem' }}>Email</p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.55rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.25rem' }}>Email</p>
                 <ContactRow icon={<IconMail />}>anooshaashraf321@gmail.com</ContactRow>
               </div>
               <div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.4rem' }}>Open Hours</p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.55rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.25rem' }}>Open Hours</p>
                 <ContactRow icon={<IconClock />}>Mon – Sat: 9 am – 7 pm<br />Sunday: CLOSED</ContactRow>
               </div>
             </div>
@@ -231,8 +231,8 @@ export default function Footer() {
       <div style={{ height: '1px', background: 'rgba(34,197,94,0.07)', margin: '0 3rem' }} />
 
       {/* ──────────── LINK COLUMNS ──────────── */}
-      <div className="px-6 md:px-12 lg:px-20 py-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10">
+      <div className="px-6 md:px-12 lg:px-20 py-5">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           <div>
             <FooterHeading>Amplify</FooterHeading>
             <div className="flex flex-col gap-3">
@@ -283,7 +283,7 @@ export default function Footer() {
       <div style={{ height: '1px', background: 'rgba(34,197,94,0.07)', margin: '0 3rem' }} />
 
       {/* ──────────── BOTTOM BAR ──────────── */}
-      <div className="px-6 md:px-12 lg:px-20 py-5">
+      <div className="px-6 md:px-12 lg:px-20 py-3">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'rgba(245,234,208,0.2)', letterSpacing: '0.04em' }}>
             © {year} Amplify Agency. All rights reserved. Built with precision in Karachi, Pakistan.

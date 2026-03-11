@@ -208,7 +208,7 @@ export default function AboutSection() {
     <section
       ref={ref}
       id="about"
-      className="relative overflow-hidden py-28"
+      className="relative overflow-hidden py-28 px-6 md:px-12 lg:px-20"
       style={{ background: 'var(--dark-3)' }}
     >
       {/* Background watermark */}
@@ -228,7 +228,7 @@ export default function AboutSection() {
         background: 'radial-gradient(ellipse 40% 40% at 75% 50%, rgba(34,197,94,0.04) 0%, transparent 70%)',
       }} />
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
 
           {/* ── LEFT: Icon grid (3 cols × 4 rows) ── */}

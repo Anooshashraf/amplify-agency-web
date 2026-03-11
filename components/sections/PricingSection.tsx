@@ -421,7 +421,7 @@ export default function PricingSection() {
   return (
     <section
       ref={ref}
-      className="relative py-28 overflow-hidden"
+      className="relative py-28 overflow-hidden px-6 md:px-12 lg:px-20"
       style={{ background: 'var(--dark)' }}
     >
       {/* Background watermark */}
@@ -448,7 +448,7 @@ export default function PricingSection() {
         pointerEvents: 'none',
       }} />
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* Header */}
         <motion.div

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Syne, DM_Sans, Space_Grotesk } from 'next/font/google'
 import '../styles/globals.css'
+import ClientProviders from '@/components/ui/ClientProviders'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -100,6 +101,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </head>
       <body>
+        <ClientProviders />
         {children}
       </body>
     </html>

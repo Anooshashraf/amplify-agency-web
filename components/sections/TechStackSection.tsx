@@ -192,7 +192,7 @@ export default function TechStackSection() {
   return (
     <section
       ref={ref}
-      className="relative py-28 overflow-hidden"
+      className="relative py-28 overflow-hidden px-6 md:px-12 lg:px-20"
       style={{ background: 'var(--dark)' }}
     >
       {/* BG watermark */}
@@ -200,7 +200,7 @@ export default function TechStackSection() {
         TECH STACK
       </div>
 
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* Header */}
         <motion.div

@@ -17,7 +17,6 @@ import SmoothScrollProvider from '@/components/ui/SmoothScrollProvider'
 import PricingSection from '@/components/sections/PricingSection'
 
 const Preloader = dynamic(() => import('@/components/ui/Preloader'), { ssr: false })
-const CustomCursor = dynamic(() => import('@/components/ui/CustomCursor'), { ssr: false })
 
 export default function HomePage() {
   const [loaded, setLoaded] = useState(false)
@@ -41,7 +40,6 @@ export default function HomePage() {
 
   return (
     <SmoothScrollProvider>
-      <CustomCursor />
       <div className="noise" aria-hidden />
 
       {!loaded && (
