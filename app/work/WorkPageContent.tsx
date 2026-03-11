@@ -985,6 +985,8 @@ function StackCard({
   depth,
   direction,
   isFront,
+  previewLoaded,
+  requestPreview,
   onNext,
   onPreview,
 }: {
@@ -992,18 +994,17 @@ function StackCard({
   depth: number
   direction: number
   isFront: boolean
+  previewLoaded: boolean
+  requestPreview: (id: string) => void
   onNext: () => void
   onPreview: () => void
 }) {
-  // Load iframe only when front card, but delay 350ms so the spring
-  // animation paints before the network request fires.
-  // Once loaded, stays loaded across cycles.
-  const [iframeReady, setIframeReady] = useState(false)
+  // Warm the front preview after the flip starts so animation stays smooth.
   useEffect(() => {
-    if (!isFront) return
-    const t = window.setTimeout(() => setIframeReady(true), 320)
+    if (!isFront || previewLoaded) return
+    const t = window.setTimeout(() => requestPreview(project.id), 90)
     return () => window.clearTimeout(t)
-  }, [isFront])
+  }, [isFront, previewLoaded, project.id, requestPreview])
 
   return (
     <motion.article
@@ -1038,7 +1039,7 @@ function StackCard({
     >
       <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
         {/* Only render iframe for the active front card */}
-        {iframeReady ? (
+        {previewLoaded ? (
           <div className="absolute top-0 left-0" style={{ width: '300%', height: '300%', transformOrigin: 'top left', transform: 'scale(0.334)' }}>
             <iframe
               src={project.liveUrl}
@@ -1104,8 +1105,13 @@ export default function WorkPageContent() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState(1)
   const [sliderPreviewOpen, setSliderPreviewOpen] = useState(false)
+  const [loadedPreviews, setLoadedPreviews] = useState<Record<string, boolean>>({})
   // Defer heavy assets — don't block first paint
   const [globeReady, setGlobeReady] = useState(false)
+
+  const requestPreview = useCallback((id: string) => {
+    setLoadedPreviews((prev) => (prev[id] ? prev : { ...prev, [id]: true }))
+  }, [])
 
   useEffect(() => {
     // ParticleGlobe: wait until browser is idle after first paint
@@ -1117,6 +1123,27 @@ export default function WorkPageContent() {
       else window.clearTimeout(id as number)
     }
   }, [])
+
+  // Hint browser to fetch static HTML pages ahead of interaction.
+  useEffect(() => {
+    const links = projects.map((p) => {
+      const l = document.createElement('link')
+      l.rel = 'prefetch'
+      l.as = 'document'
+      l.href = p.liveUrl
+      document.head.appendChild(l)
+      return l
+    })
+    return () => { links.forEach((l) => l.remove()) }
+  }, [])
+
+  // Keep current + next preview warm to avoid lag on flip.
+  useEffect(() => {
+    requestPreview(projects[activeIndex].id)
+    const next = projects[(activeIndex + 1) % projects.length]
+    const t = window.setTimeout(() => requestPreview(next.id), 200)
+    return () => window.clearTimeout(t)
+  }, [activeIndex, requestPreview])
 
   const goNext = () => { setDirection(1);  setActiveIndex(p => (p + 1) % projects.length) }
   const goPrev = () => { setDirection(-1); setActiveIndex(p => (p - 1 + projects.length) % projects.length) }
@@ -1208,6 +1235,8 @@ export default function WorkPageContent() {
                       depth={depth}
                       direction={direction}
                       isFront={depth === 0}
+                      previewLoaded={!!loadedPreviews[projects[idx].id]}
+                      requestPreview={requestPreview}
                       onNext={goNext}
                       onPreview={() => setSliderPreviewOpen(true)}
                     />

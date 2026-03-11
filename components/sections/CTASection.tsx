@@ -123,7 +123,7 @@ export default function CTASection() {
                   <span>Start a Project</span>
                 </button>
               </Link>
-              <Link href="/services">
+              <Link href="/work">
                 <button className="btn-outline flex items-center gap-2">
                   Explore Our Work
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -143,8 +143,8 @@ export default function CTASection() {
           >
             {[
               { label: 'Services', items: ['Web Development', 'Mobile Apps', 'UI/UX Design'] },
-              { label: 'Instagram', items: ['@amplifyagency'] },
-              { label: 'TikTok', items: ['@amplify'] },
+              { label: 'Instagram', items: ['@amplify.com.pk'] },
+              { label: 'Facebook', items: ['@amplify.com.pk'] },
             ].map((col) => (
               <div
                 key={col.label}

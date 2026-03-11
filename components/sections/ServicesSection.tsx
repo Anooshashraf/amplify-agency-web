@@ -129,7 +129,7 @@ export default function ServicesSection() {
         {/* ── Main grid ──────────────────────────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          {/* LEFT — animated globe + active service image overlay */}
+          {/* LEFT — animated globe */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -148,48 +148,6 @@ export default function ServicesSection() {
 
             <div className="relative w-full h-full" style={{ zIndex: 2, minHeight: '480px' }}>
               <ParticleGlobe className="absolute inset-0" particleCount={3200} />
-
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={active}
-                  initial={{ opacity: 0, y: 16, scale: 0.92 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.94 }}
-                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute bottom-4 right-0 rounded-2xl overflow-hidden"
-                  style={{
-                    width: '200px',
-                    height: '130px',
-                    border: '1px solid rgba(34,197,94,0.30)',
-                    boxShadow: '0 16px 48px rgba(0,0,0,0.5), 0 0 30px rgba(34,197,94,0.12)',
-                    zIndex: 3,
-                  }}
-                >
-                  <img
-                    src={activeService.imgSrc}
-                    alt={activeService.title}
-                    className="w-full h-full object-cover"
-                    style={{ filter: 'brightness(0.75)' }}
-                  />
-                  {/* Label overlay */}
-                  <div
-                    className="absolute bottom-0 left-0 right-0 px-3 py-2"
-                    style={{
-                      background: 'linear-gradient(to top, rgba(2,10,6,0.92) 0%, transparent 100%)',
-                    }}
-                  >
-                    <span style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      color: 'var(--green-bright)',
-                      letterSpacing: '0.05em',
-                    }}>
-                      {activeService.title}
-                    </span>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
 
               {/* Service number badge */}
               <div
@@ -238,7 +196,7 @@ export default function ServicesSection() {
                   }}
                 />
 
-                {/* Image strip — visible when active */}
+                {/* Image strip — visible in main card content when active */}
                 <AnimatePresence>
                   {i === active && (
                     <motion.div
@@ -254,14 +212,10 @@ export default function ServicesSection() {
                         className="w-full object-cover"
                         style={{ height: '100px', filter: 'brightness(0.55)', objectPosition: 'center 30%' }}
                       />
-                      {/* Gradient fade bottom */}
                       <div
                         className="absolute inset-0"
-                        style={{
-                          background: 'linear-gradient(to bottom, transparent 20%, var(--dark-2) 100%)',
-                        }}
+                        style={{ background: 'linear-gradient(to bottom, transparent 20%, var(--dark-2) 100%)' }}
                       />
-                      {/* Green tint overlay */}
                       <div
                         className="absolute inset-0"
                         style={{ background: 'rgba(34,197,94,0.06)' }}

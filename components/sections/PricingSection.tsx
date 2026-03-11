@@ -11,24 +11,23 @@ const plans = [
     id: '01',
     name: 'Launch',
     tagline: 'For startups & MVPs',
-    price: { monthly: 2900, annual: 2400 },
+    price: { monthly: 20000, annual: 18000 },
     description: 'Everything you need to go from idea to a polished, live product fast.',
     cta: 'Start Launch',
     ctaHref: '/contact?plan=launch',
     highlight: false,
     features: [
-      { text: 'Up to 8 pages / screens', included: true },
+      { text: 'Up to 4 pages / screens', included: true },
       { text: 'Responsive web design', included: true },
       { text: 'Custom UI components', included: true },
       { text: 'Basic SEO setup', included: true },
       { text: 'Contact / lead form', included: true },
       { text: '2 rounds of revisions', included: true },
       { text: 'CMS integration', included: false },
-      { text: 'Custom animations', included: false },
       { text: 'API / backend development', included: false },
       { text: 'Dedicated project manager', included: false },
     ],
-    deliveryWeeks: '3–4',
+    deliveryWeeks: '2–3',
     accentColor: 'rgba(245,234,208,0.55)',
     borderColor: 'rgba(245,234,208,0.08)',
     bgGlow: 'rgba(245,234,208,0.02)',
@@ -37,13 +36,13 @@ const plans = [
     id: '02',
     name: 'Scale',
     tagline: 'Most popular',
-    price: { monthly: 6500, annual: 5400 },
+    price: { monthly: 50000, annual: 44000 },
     description: 'Full-stack builds with custom motion, integrations, and a dedicated team.',
     cta: 'Start Scale',
     ctaHref: '/contact?plan=scale',
     highlight: true,
     features: [
-      { text: 'Up to 20 pages / screens', included: true },
+      { text: 'Up to 10 pages / screens', included: true },
       { text: 'Responsive web design', included: true },
       { text: 'Custom UI components', included: true },
       { text: 'Advanced SEO + analytics', included: true },
@@ -54,7 +53,7 @@ const plans = [
       { text: 'API / backend development', included: false },
       { text: 'Dedicated project manager', included: false },
     ],
-    deliveryWeeks: '5–7',
+    deliveryWeeks: '6–8',
     accentColor: '#3ec76e',
     borderColor: 'rgba(62,199,110,0.25)',
     bgGlow: 'rgba(62,199,110,0.04)',
@@ -261,29 +260,29 @@ function PricingCard({
                 letterSpacing: '-0.04em',
                 lineHeight: 1,
               }}>
-                ${price.toLocaleString()}
+                Rs{price.toLocaleString()}
               </span>
-              <div style={{ paddingBottom: '6px' }}>
-                <span style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.72rem',
-                  color: 'rgba(245,234,208,0.35)',
-                  display: 'block',
-                  lineHeight: 1.3,
-                }}>
-                  / project
-                </span>
-                {billing === 'annual' && (
+                <div style={{ paddingBottom: '6px' }}>
                   <span style={{
                     fontFamily: 'var(--font-body)',
-                    fontSize: '0.6rem',
-                    color: plan.highlight ? '#3ec76e' : 'rgba(245,234,208,0.3)',
-                    letterSpacing: '0.04em',
+                    fontSize: '0.72rem',
+                    color: 'rgba(245,234,208,0.35)',
+                    display: 'block',
+                    lineHeight: 1.3,
                   }}>
-                    billed annually
+                    / project
                   </span>
-                )}
-              </div>
+                  {billing === 'annual' && (
+                    <span style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.6rem',
+                      color: plan.highlight ? '#3ec76e' : 'rgba(245,234,208,0.3)',
+                      letterSpacing: '0.04em',
+                    }}>
+                      billed annually
+                    </span>
+                  )}
+                </div>
             </div>
           ) : (
             <div>

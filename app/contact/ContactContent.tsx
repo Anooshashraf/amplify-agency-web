@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 
 type FormData = {
   name: string
@@ -13,11 +14,16 @@ type FormData = {
 }
 
 const budgets = [
-  'Under $5k',
-  '$5k – $15k',
-  '$15k – $50k',
-  '$50k+',
+  'Under Rs20k',
+  'Rs20k – Rs50k',
+  'Rs50k – Rs100k',
+  'Over Rs100k',
 ]
+
+const DotWorldMap = dynamic(() => import('@/components/three/DotWorldMap'), {
+  ssr: false,
+  loading: () => null,
+})
 
 export default function ContactContent() {
   const [submitted, setSubmitted] = useState(false)
@@ -39,7 +45,8 @@ export default function ContactContent() {
         setSubmitted(true)
         reset()
       } else {
-        setError('Something went wrong. Please try again.')
+        const payload = await res.json().catch(() => null)
+        setError(payload?.error || 'Something went wrong. Please try again.')
       }
     } catch {
       setError('Network error. Please try again.')
@@ -54,11 +61,55 @@ export default function ContactContent() {
         {/* BG text */}
         <div
           className="section-bg-text"
-          style={{ top: '20%', left: '-5%' }}
+          style={{ top: '50%', left: '50%', transform: 'translate(-50%,-50%)', fontSize: 'clamp(4rem, 10vw, 9rem)' }}
           aria-hidden
         >
           CONTACT
         </div>
+
+        {/* 3D contact backdrop */}
+        <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.2 }}>
+          <DotWorldMap className="absolute inset-0" />
+        </div>
+
+        {/* Animated ambient motion */}
+        <motion.div
+          aria-hidden
+          className="absolute -top-20 left-[8%] pointer-events-none"
+          animate={{ x: [0, 30, -12, 0], y: [0, 18, -8, 0], scale: [1, 1.08, 0.95, 1] }}
+          transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+          style={{
+            width: '260px',
+            height: '260px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(34,197,94,0.16) 0%, rgba(34,197,94,0) 72%)',
+            filter: 'blur(10px)',
+          }}
+        />
+        <motion.div
+          aria-hidden
+          className="absolute top-[38%] right-[8%] pointer-events-none"
+          animate={{ x: [0, -24, 14, 0], y: [0, -16, 10, 0], scale: [1, 0.94, 1.06, 1] }}
+          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+          style={{
+            width: '220px',
+            height: '220px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(16,185,129,0.14) 0%, rgba(16,185,129,0) 72%)',
+            filter: 'blur(8px)',
+          }}
+        />
+        <motion.div
+          aria-hidden
+          className="absolute inset-y-0 -left-1/4 pointer-events-none"
+          animate={{ x: ['0%', '55%', '0%'] }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+          style={{
+            width: '45%',
+            background: 'linear-gradient(105deg, rgba(34,197,94,0) 0%, rgba(34,197,94,0.06) 45%, rgba(34,197,94,0) 100%)',
+            filter: 'blur(10px)',
+          }}
+        />
 
         {/* Glow */}
         <div
@@ -135,7 +186,7 @@ export default function ContactContent() {
                 className="space-y-4"
               >
                 {[
-                  { label: 'Email', value: 'hello@amplifyagency.com' },
+                  { label: 'Email', value: 'anooshaashraf321@gmail.com' },
                   { label: 'Response time', value: 'Within 24 hours' },
                   { label: 'Available', value: '24/7 Support' },
                 ].map((item) => (
@@ -232,7 +283,7 @@ export default function ContactContent() {
                       </label>
                       <input
                         {...register('name', { required: true })}
-                        placeholder="John Doe"
+                        placeholder="John "
                         className="input-field"
                         style={{ borderColor: errors.name ? 'rgba(239,68,68,0.5)' : undefined }}
                       />

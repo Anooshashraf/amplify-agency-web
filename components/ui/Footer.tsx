@@ -23,6 +23,11 @@ const IconWhatsapp = () => (
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.118.555 4.107 1.526 5.833L.057 23.25l5.565-1.457A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.302.866.88-3.217-.24-.38A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
 )
+const IconInstagram = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.118.555 4.107 1.526 5.833L.057 23.25l5.565-1.457A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.302.866.88-3.217-.24-.38A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+)
 const IconMail = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -183,7 +188,7 @@ export default function Footer() {
               <SmallSocialBtn icon={<IconFacebook />} href="https://facebook.com" />
               <SmallSocialBtn icon={<IconLinkedin />} href="https://linkedin.com" />
               <SmallSocialBtn icon={<IconTwitter />} href="https://twitter.com" />
-              <SmallSocialBtn icon={<IconWhatsapp />} href="https://wa.me/923022211112" />
+              <SmallSocialBtn icon={<IconWhatsapp />} href="https://wa.me/923108486366" />
             </div>
           </div>
 
@@ -191,9 +196,9 @@ export default function Footer() {
           <div>
             <FooterHeading>Social Feeds</FooterHeading>
             <div className="grid grid-cols-2 gap-2.5">
-              <SocialTile icon={<IconFacebook />}  label="Facebook"   handle="@amplifyagency" href="https://facebook.com"  color="#1877f2" />
-              <SocialTile icon={<IconLinkedin />}  label="LinkedIn"   handle="Amplify Agency" href="https://linkedin.com"  color="#0a66c2" />
-              <SocialTile icon={<IconTwitter />}   label="Twitter / X" handle="@amplifyagency" href="https://twitter.com"   color="#e7e9ea" />
+              <SocialTile icon={<IconFacebook />}  label="Facebook"   handle="@amplify.com.pk" href="https://facebook.com"  color="#1877f2" />
+              <SocialTile icon={<IconLinkedin />}  label="LinkedIn"   handle="Amplify" href="https://linkedin.com"  color="#0a66c2" />
+              <SocialTile icon={<IconInstagram />}   label="Instagram" handle="@amplify.com.pk" href="https://instagram.com"   color="#e7e9ea" />
             </div>
           </div>
 
@@ -203,15 +208,15 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <div>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.4rem' }}>Office</p>
-                <ContactRow icon={<IconPin />}>Suite 4B, Tech Tower, Block 7,<br />Clifton, Karachi, Pakistan.</ContactRow>
+                <ContactRow icon={<IconPin />}> Karachi, Pakistan.</ContactRow>
               </div>
               <div>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.4rem' }}>Phone</p>
-                <ContactRow icon={<IconPhone />}>+92 302 221 1112</ContactRow>
+                <ContactRow icon={<IconPhone />}>+92 310 848 6366</ContactRow>
               </div>
               <div>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.4rem' }}>Email</p>
-                <ContactRow icon={<IconMail />}>hello@amplifyagency.com</ContactRow>
+                <ContactRow icon={<IconMail />}>anooshaashraf321@gmail.com</ContactRow>
               </div>
               <div>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.4rem' }}>Open Hours</p>
@@ -236,7 +241,6 @@ export default function Footer() {
               <FooterLink href="/services">Services</FooterLink>
               <FooterLink href="/work">Our Work</FooterLink>
               <FooterLink href="/contact">Contact</FooterLink>
-              <FooterLink href="/contact">Get a Quote</FooterLink>
             </div>
           </div>
           <div>
@@ -245,7 +249,6 @@ export default function Footer() {
               <FooterLink href="/services">UI/UX Design</FooterLink>
               <FooterLink href="/services">Web Development</FooterLink>
               <FooterLink href="/services">Mobile Apps</FooterLink>
-              <FooterLink href="/services">E-Commerce</FooterLink>
               <FooterLink href="/services">SEO & Analytics</FooterLink>
             </div>
           </div>
@@ -254,17 +257,13 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <FooterLink href="/services">Next.js & React</FooterLink>
               <FooterLink href="/services">Node.js & APIs</FooterLink>
-              <FooterLink href="/services">Three.js / WebGL</FooterLink>
               <FooterLink href="/services">PostgreSQL</FooterLink>
-              <FooterLink href="/services">Cloud & DevOps</FooterLink>
             </div>
           </div>
           <div>
             <FooterHeading>Industries</FooterHeading>
             <div className="flex flex-col gap-3">
               <FooterLink href="/work">Automotive</FooterLink>
-              <FooterLink href="/work">Hospitality</FooterLink>
-              <FooterLink href="/work">Tech & SaaS</FooterLink>
               <FooterLink href="/work">E-Commerce</FooterLink>
               <FooterLink href="/work">Healthcare</FooterLink>
             </div>
@@ -275,7 +274,6 @@ export default function Footer() {
               <FooterLink href="/contact">Start a Project</FooterLink>
               <FooterLink href="/contact">Request a Demo</FooterLink>
               <FooterLink href="/contact">Partnerships</FooterLink>
-              <FooterLink href="/contact">Careers</FooterLink>
               <FooterLink href="/contact">Privacy Policy</FooterLink>
             </div>
           </div>

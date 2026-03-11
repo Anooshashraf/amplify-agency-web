@@ -15,6 +15,7 @@ const allServices = [
       'Blazing-fast, SEO-optimised web experiences. From marketing sites to complex SaaS platforms, we build for performance, scalability, and conversion.',
     features: ['Next.js / React', 'Server-side rendering', 'SEO optimisation', 'Performance tuning', 'CMS integration'],
     accent: 'var(--green-bright)',
+    imgSrc: '/images/devops.jpg',
   },
   {
     id: '02',
@@ -23,6 +24,7 @@ const allServices = [
       'Cross-platform iOS & Android apps with React Native. Native-level performance with a single codebase. App Store and Play Store ready.',
     features: ['React Native', 'Expo', 'Push notifications', 'Offline support', 'In-app purchases'],
     accent: 'var(--cream)',
+    imgSrc: '/images/mobile-app.jpg',
   },
   {
     id: '03',
@@ -31,6 +33,7 @@ const allServices = [
       'User interfaces that convert. We conduct real research, build design systems, and create high-fidelity prototypes before a single line of code is written.',
     features: ['User research', 'Wireframing', 'High-fidelity design', 'Design systems', 'Usability testing'],
     accent: 'var(--green-bright)',
+    imgSrc: '/images/ui-ux.jpg',
   },
   {
     id: '04',
@@ -39,6 +42,7 @@ const allServices = [
       'Robust, scalable server infrastructure. REST and GraphQL APIs, database architecture, authentication, and cloud deployment.',
     features: ['Node.js / Python', 'PostgreSQL / MongoDB', 'REST & GraphQL', 'AWS / Vercel', 'Docker / CI/CD'],
     accent: 'var(--cream)',
+    imgSrc: '/images/ecommerce.webp',
   },
   {
     id: '05',
@@ -47,6 +51,7 @@ const allServices = [
       'Embed real intelligence into your product. LLM integrations, custom model fine-tuning, RAG pipelines, and AI-powered features that users love.',
     features: ['OpenAI / Claude API', 'LangChain', 'Vector databases', 'Fine-tuning', 'AI agents'],
     accent: 'var(--green-bright)',
+    imgSrc: '/images/seo.jpg',
   },
   {
     id: '06',
@@ -55,6 +60,7 @@ const allServices = [
       '24/7 support, monitoring, updates, and ongoing development. We don\'t disappear after launch — we grow with you.',
     features: ['24/7 monitoring', 'Bug fixes', 'Feature updates', 'Performance reports', 'Dedicated Slack channel'],
     accent: 'var(--cream)',
+    imgSrc: '/images/team_collaboration.png',
   },
 ]
 
@@ -67,9 +73,27 @@ function ServiceCard({ service, index }: { service: typeof allServices[0]; index
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="glass-card rounded-2xl p-8 group hover:glow-green transition-all duration-500"
+      className="glass-card relative overflow-hidden rounded-2xl p-8 group hover:glow-green transition-all duration-500"
       style={{ borderColor: 'rgba(34,197,94,0.1)' }}
     >
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{
+          backgroundImage: `url(${service.imgSrc})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'brightness(0.38) saturate(0.78) contrast(0.98)',
+        }}
+      />
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(2,10,6,0.72) 0%, rgba(2,10,6,0.68) 50%, rgba(2,10,6,0.74) 100%)',
+          boxShadow: 'inset 0 0 0 1px rgba(34,197,94,0.08)',
+        }}
+      />
+
+      <div className="relative z-10">
       <div className="flex items-start justify-between mb-6">
         <span
           style={{
@@ -81,11 +105,7 @@ function ServiceCard({ service, index }: { service: typeof allServices[0]; index
         >
           {service.id}
         </span>
-        <div className="arrow-btn group-hover:bg-green-DEFAULT group-hover:border-green-DEFAULT transition-all duration-300">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
+        
       </div>
 
       <h3
@@ -140,6 +160,7 @@ function ServiceCard({ service, index }: { service: typeof allServices[0]; index
             </span>
           </div>
         ))}
+      </div>
       </div>
     </motion.div>
   )

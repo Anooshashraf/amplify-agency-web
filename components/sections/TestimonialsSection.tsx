@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          fontSize: 'clamp(5rem, 14vw, 13rem)',
+          fontSize: 'clamp(4rem, 11vw, 10rem)',
           opacity: 1,
         }}
         aria-hidden
