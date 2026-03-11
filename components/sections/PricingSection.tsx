@@ -127,23 +127,31 @@ function PricingCard({
   inView: boolean
 }) {
   const price = plan.price[billing]
+  const [hovered, setHovered] = useState(false)
 
   return (
+    <div style={{ transform: plan.highlight ? 'translateY(-12px)' : undefined, zIndex: plan.highlight ? 2 : 1, position: 'relative' }}>
     <motion.div
       custom={index}
       variants={CARD_VARIANTS}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
+      whileHover={{ y: -8 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
       style={{
         position: 'relative',
         borderRadius: '20px',
         padding: plan.highlight ? '2px' : '1.5px',
         background: plan.highlight
-          ? 'linear-gradient(135deg, #3ec76e55, #1a6b3c33, #3ec76e44)'
-          : `linear-gradient(135deg, ${plan.borderColor}, transparent, ${plan.borderColor})`,
-        // Pop the middle card up
-        transform: plan.highlight ? 'translateY(-12px)' : 'none',
-        zIndex: plan.highlight ? 2 : 1,
+          ? hovered
+            ? 'linear-gradient(135deg, #3ec76e99, #1a6b3c66, #3ec76e88)'
+            : 'linear-gradient(135deg, #3ec76e55, #1a6b3c33, #3ec76e44)'
+          : hovered
+            ? `linear-gradient(135deg, rgba(62,199,110,0.22), rgba(62,199,110,0.08), rgba(62,199,110,0.18))`
+            : `linear-gradient(135deg, ${plan.borderColor}, transparent, ${plan.borderColor})`,
+        cursor: 'default',
       }}
     >
       {/* Highlight label */}
@@ -185,15 +193,29 @@ function PricingCard({
           gap: 0,
           position: 'relative',
           overflow: 'hidden',
+          transition: 'background 0.3s ease',
         }}
       >
+        {/* Hover glow overlay */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          borderRadius: '18px',
+          background: plan.highlight
+            ? `radial-gradient(ellipse at 50% 0%, rgba(62,199,110,${hovered ? '0.13' : '0.0'}), transparent 65%)`
+            : `radial-gradient(ellipse at 50% 0%, rgba(62,199,110,${hovered ? '0.07' : '0.0'}), transparent 65%)`,
+          opacity: hovered ? 1 : 0,
+          transition: 'opacity 0.35s ease',
+          pointerEvents: 'none',
+        }} />
         {/* Subtle corner glow */}
         {plan.highlight && (
           <div style={{
             position: 'absolute', top: 0, right: 0,
-            width: '180px', height: '180px',
-            background: 'radial-gradient(circle at top right, rgba(62,199,110,0.12), transparent 70%)',
+            width: hovered ? '240px' : '180px',
+            height: hovered ? '240px' : '180px',
+            background: 'radial-gradient(circle at top right, rgba(62,199,110,0.14), transparent 70%)',
             pointerEvents: 'none',
+            transition: 'width 0.4s ease, height 0.4s ease',
           }} />
         )}
 
@@ -251,7 +273,7 @@ function PricingCard({
         {/* Price */}
         <div style={{ marginBottom: '28px' }}>
           {price !== null ? (
-            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '6px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{
                 fontFamily: 'var(--font-number)',
                 fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
@@ -262,7 +284,7 @@ function PricingCard({
               }}>
                 Rs{price.toLocaleString()}
               </span>
-                <div style={{ paddingBottom: '6px' }}>
+                <div>
                   <span style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '0.72rem',
@@ -359,7 +381,6 @@ function PricingCard({
           </span>
         </div>
 
-        {/* CTA */}
         <Link href={plan.ctaHref} style={{ textDecoration: 'none' }}>
           <motion.button
             whileHover={{ scale: 1.02 }}
@@ -386,6 +407,7 @@ function PricingCard({
         </Link>
       </div>
     </motion.div>
+    </div>
   )
 }
 
@@ -464,7 +486,6 @@ export default function PricingSection() {
                 <em style={{ fontStyle: 'italic', color: 'var(--green-bright)' }}>no surprises</em>
               </h2>
 
-              {/* Billing toggle */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',

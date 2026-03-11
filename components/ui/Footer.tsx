@@ -192,7 +192,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* 2 — Social Tiles */}
           <div>
             <FooterHeading>Social Feeds</FooterHeading>
             <div className="grid grid-cols-2 gap-2.5">
