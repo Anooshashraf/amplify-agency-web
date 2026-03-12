@@ -126,7 +126,7 @@ function ServiceCard({ service, index }: { service: typeof allServices[0]; index
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '0.875rem',
-          color: 'rgba(245,234,208,0.5)',
+          color: 'rgba(245,234,208,0.75)',
           lineHeight: 1.75,
           marginBottom: '1.5rem',
         }}
@@ -153,7 +153,7 @@ function ServiceCard({ service, index }: { service: typeof allServices[0]; index
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.8rem',
-                color: 'rgba(245,234,208,0.45)',
+                color: 'rgba(245,234,208,0.70)',
               }}
             >
               {f}
@@ -217,7 +217,7 @@ export default function ServicesPageContent() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '1rem',
-              color: 'rgba(245,234,208,0.45)',
+              color: 'rgba(245,234,208,0.70)',
               maxWidth: '50ch',
               lineHeight: 1.7,
             }}
@@ -249,7 +249,7 @@ export default function ServicesPageContent() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1rem',
-                color: 'rgba(245,234,208,0.4)',
+                color: 'rgba(245,234,208,0.65)',
                 marginBottom: '2rem',
               }}
             >

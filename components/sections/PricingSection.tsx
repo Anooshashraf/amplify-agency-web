@@ -28,7 +28,7 @@ const plans = [
       { text: 'Dedicated project manager', included: false },
     ],
     deliveryWeeks: '2–3',
-    accentColor: 'rgba(245,234,208,0.55)',
+    accentColor: 'rgba(245,234,208,0.78)',
     borderColor: 'rgba(245,234,208,0.08)',
     bgGlow: 'rgba(245,234,208,0.02)',
   },
@@ -80,7 +80,7 @@ const plans = [
       { text: 'Dedicated project manager', included: true },
     ],
     deliveryWeeks: 'Custom',
-    accentColor: 'rgba(245,234,208,0.55)',
+    accentColor: 'rgba(245,234,208,0.78)',
     borderColor: 'rgba(245,234,208,0.08)',
     bgGlow: 'rgba(245,234,208,0.02)',
   },
@@ -262,7 +262,7 @@ function PricingCard({
         <p style={{
           fontFamily: 'var(--font-body)',
           fontSize: '0.78rem',
-          color: 'rgba(245,234,208,0.4)',
+          color: 'rgba(245,234,208,0.65)',
           lineHeight: 1.7,
           marginBottom: '28px',
           minHeight: '52px',
@@ -372,7 +372,7 @@ function PricingCard({
           <span style={{
             fontFamily: 'var(--font-body)',
             fontSize: '0.7rem',
-            color: 'rgba(245,234,208,0.45)',
+            color: 'rgba(245,234,208,0.70)',
           }}>
             Delivered in{' '}
             <span style={{ color: plan.accentColor, fontWeight: 600 }}>

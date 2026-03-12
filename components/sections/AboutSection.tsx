@@ -178,7 +178,7 @@ function ServiceTile({
           textTransform: 'uppercase',
           textAlign: 'center',
           lineHeight: 1.5,
-          color: hovered ? 'var(--cream)' : 'rgba(245,234,208,0.45)',
+          color: hovered ? 'var(--cream)' : 'rgba(245,234,208,0.70)',
           transition: 'color 0.3s',
           whiteSpace: 'pre-line',
         }}
@@ -296,7 +296,7 @@ export default function AboutSection() {
               transition={{ duration: 0.8, delay: 0.25 }}
               style={{
                 fontFamily: 'var(--font-body)', fontSize: '0.9rem',
-                color: 'rgba(245,234,208,0.5)', lineHeight: 1.85,
+                color: 'rgba(245,234,208,0.75)', lineHeight: 1.85,
                 marginBottom: '1.25rem',
               }}
             >
@@ -309,7 +309,7 @@ export default function AboutSection() {
               transition={{ duration: 0.8, delay: 0.33 }}
               style={{
                 fontFamily: 'var(--font-body)', fontSize: '0.9rem',
-                color: 'rgba(245,234,208,0.5)', lineHeight: 1.85,
+                color: 'rgba(245,234,208,0.75)', lineHeight: 1.85,
                 marginBottom: '2.5rem',
               }}
             >
@@ -379,7 +379,7 @@ export default function AboutSection() {
                   </div>
                   <span style={{
                     fontFamily: 'var(--font-body)', fontSize: '0.83rem',
-                    color: 'rgba(245,234,208,0.55)',
+                    color: 'rgba(245,234,208,0.78)',
                   }}>
                     {item}
                   </span>

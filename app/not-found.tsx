@@ -47,7 +47,7 @@ export default function NotFound() {
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '0.95rem',
-          color: 'rgba(245,234,208,0.4)',
+          color: 'rgba(245,234,208,0.65)',
           maxWidth: '36ch',
           lineHeight: 1.7,
         }}

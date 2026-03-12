@@ -144,7 +144,7 @@
 //               <span style={{
 //                 fontFamily: 'var(--font-body)',
 //                 fontSize: '0.7rem',
-//                 color: 'rgba(245,234,208,0.45)',
+//                 color: 'rgba(245,234,208,0.70)',
 //                 letterSpacing: '0.02em',
 //               }}>
 //                 amplifyagency.com{url}
@@ -363,7 +363,7 @@
 //                 <span style={{
 //                   fontFamily: 'var(--font-body)',
 //                   fontSize: '0.65rem',
-//                   color: 'rgba(245,234,208,0.4)',
+//                   color: 'rgba(245,234,208,0.65)',
 //                   letterSpacing: '0.1em',
 //                   textTransform: 'uppercase',
 //                 }}>
@@ -384,7 +384,7 @@
 //             <div className="md:col-span-2">
 //               <p style={{
 //                 fontFamily: 'var(--font-body)', fontSize: '0.84rem',
-//                 color: 'rgba(245,234,208,0.55)', lineHeight: 1.85, marginBottom: '2rem',
+//                 color: 'rgba(245,234,208,0.78)', lineHeight: 1.85, marginBottom: '2rem',
 //               }}>
 //                 {project.description}
 //               </p>
@@ -400,7 +400,7 @@
 //                   </div>
 //                   <p style={{
 //                     fontFamily: 'var(--font-body)', fontSize: '0.76rem',
-//                     color: 'rgba(245,234,208,0.45)', lineHeight: 1.75,
+//                     color: 'rgba(245,234,208,0.70)', lineHeight: 1.75,
 //                   }}>
 //                     {project.challenge}
 //                   </p>
@@ -415,7 +415,7 @@
 //                   </div>
 //                   <p style={{
 //                     fontFamily: 'var(--font-body)', fontSize: '0.76rem',
-//                     color: 'rgba(245,234,208,0.45)', lineHeight: 1.75,
+//                     color: 'rgba(245,234,208,0.70)', lineHeight: 1.75,
 //                   }}>
 //                     {project.solution}
 //                   </p>
@@ -439,7 +439,7 @@
 //                       <div className="w-1 h-1 rounded-full" style={{ background: project.color }} />
 //                       <span style={{
 //                         fontFamily: 'var(--font-body)', fontSize: '0.74rem',
-//                         color: 'rgba(245,234,208,0.5)',
+//                         color: 'rgba(245,234,208,0.75)',
 //                       }}>
 //                         {s}
 //                       </span>
@@ -504,7 +504,7 @@
 //                     border: '1px solid rgba(245,234,208,0.08)',
 //                     fontFamily: 'var(--font-body)',
 //                     fontSize: '0.72rem',
-//                     color: 'rgba(245,234,208,0.4)',
+//                     color: 'rgba(245,234,208,0.65)',
 //                     textDecoration: 'none',
 //                     cursor: 'pointer',
 //                   }}
@@ -600,14 +600,14 @@
 //                 <p style={{
 //                   fontFamily: 'var(--font-body)',
 //                   fontSize: 'clamp(0.76rem, 1.15vw, 0.88rem)',
-//                   color: 'rgba(245,234,208,0.45)',
+//                   color: 'rgba(245,234,208,0.70)',
 //                   maxWidth: '52ch', lineHeight: 1.8, marginBottom: '2.2rem',
 //                 }}>
 //                   Every project is a collaboration. We embed ourselves in your business, understand your users, and build digital products that deliver measurable results.
 //                 </p>
 
 //                 <div className="flex items-center gap-3 mb-4">
-//                   <span style={{ fontFamily: 'var(--font-number)', fontSize: '0.66rem', color: 'rgba(245,234,208,0.42)', letterSpacing: '0.09em' }}>
+//                   <span style={{ fontFamily: 'var(--font-number)', fontSize: '0.66rem', color: 'rgba(245,234,208,0.65)', letterSpacing: '0.09em' }}>
 //                     {projects[activeIndex].id} / {String(projects.length).padStart(2, '0')}
 //                   </span>
 //                   <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.62rem', color: 'rgba(245,234,208,0.35)', letterSpacing: '0.06em' }}>
@@ -940,7 +940,7 @@ function PreviewModal({ url, title, color, onClose }: {
                 <rect x="1" y="5" width="8" height="7" rx="1.5" stroke={color} strokeWidth="1.2"/>
                 <path d="M3 5V3.5a2 2 0 0 1 4 0V5" stroke={color} strokeWidth="1.2"/>
               </svg>
-              <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'rgba(245,234,208,0.45)', letterSpacing: '0.02em' }}>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'rgba(245,234,208,0.70)', letterSpacing: '0.02em' }}>
                 amplifyagency.com{url}
               </span>
             </div>
@@ -1182,11 +1182,11 @@ export default function WorkPageContent() {
                   Work That{' '}
                   <em style={{ fontStyle: 'italic', color: 'var(--green-bright)' }}>Performs</em>
                 </h1>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.76rem, 1.15vw, 0.88rem)', color: 'rgba(245,234,208,0.45)', maxWidth: '52ch', lineHeight: 1.8, marginBottom: '2.2rem' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.76rem, 1.15vw, 0.88rem)', color: 'rgba(245,234,208,0.70)', maxWidth: '52ch', lineHeight: 1.8, marginBottom: '2.2rem' }}>
                   Every project is a collaboration. We embed ourselves in your business, understand your users, and build digital products that deliver measurable results.
                 </p>
                 <div className="flex items-center gap-3 mb-4">
-                  <span style={{ fontFamily: 'var(--font-number)', fontSize: '0.66rem', color: 'rgba(245,234,208,0.42)', letterSpacing: '0.09em' }}>
+                  <span style={{ fontFamily: 'var(--font-number)', fontSize: '0.66rem', color: 'rgba(245,234,208,0.65)', letterSpacing: '0.09em' }}>
                     {projects[activeIndex].id} / {String(projects.length).padStart(2, '0')}
                   </span>
                   <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.62rem', color: 'rgba(245,234,208,0.35)', letterSpacing: '0.06em' }}>

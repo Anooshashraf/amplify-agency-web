@@ -102,7 +102,7 @@ export default function CTASection() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.9rem',
-                color: 'rgba(245,234,208,0.45)',
+                color: 'rgba(245,234,208,0.70)',
                 lineHeight: 1.7,
                 maxWidth: '44ch',
                 marginBottom: '2.5rem',

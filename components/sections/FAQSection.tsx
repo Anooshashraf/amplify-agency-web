@@ -193,7 +193,7 @@ export default function FAQSection() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.9rem',
-                color: 'rgba(245,234,208,0.45)',
+                color: 'rgba(245,234,208,0.70)',
                 lineHeight: 1.8,
                 maxWidth: '38ch',
                 marginBottom: '2.5rem',
@@ -269,7 +269,7 @@ export default function FAQSection() {
                         style={{
                           fontFamily: 'var(--font-body)',
                           fontSize: '0.875rem',
-                          color: 'rgba(245,234,208,0.5)',
+                          color: 'rgba(245,234,208,0.75)',
                           lineHeight: 1.8,
                           paddingBottom: '1.5rem',
                           paddingRight: '2rem',

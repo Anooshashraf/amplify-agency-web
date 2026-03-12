@@ -155,7 +155,7 @@ export default function TestimonialsSection() {
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: 'var(--cream)' }}>
                     {clients[0].name}
                   </div>
-                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'rgba(245,234,208,0.4)' }}>
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'rgba(245,234,208,0.65)' }}>
                     {clients[0].title}
                   </div>
                 </div>
@@ -214,7 +214,7 @@ export default function TestimonialsSection() {
                       <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 700, color: 'var(--cream)' }}>
                         {client.name}
                       </div>
-                      <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.76rem', color: 'rgba(245,234,208,0.4)' }}>
+                      <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.76rem', color: 'rgba(245,234,208,0.65)' }}>
                         {client.title}
                       </div>
                     </div>

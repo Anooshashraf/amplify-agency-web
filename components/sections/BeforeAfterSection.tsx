@@ -111,7 +111,7 @@ function AfterSite() {
         </div>
         <div style={{ display: 'flex', gap: '10px' }}>
           {['Work','Services','Contact'].map(l => (
-            <span key={l} style={{ color: 'rgba(245,234,208,0.5)', fontSize: '7px', letterSpacing: '0.05em' }}>{l}</span>
+            <span key={l} style={{ color: 'rgba(245,234,208,0.75)', fontSize: '7px', letterSpacing: '0.05em' }}>{l}</span>
           ))}
         </div>
         <div style={{
@@ -144,7 +144,7 @@ function AfterSite() {
             <span style={{ color: '#3ec76e', fontStyle: 'italic' }}>Digital</span>{' '}
             Solutions<br />That Matter
           </div>
-          <div style={{ fontSize: '7px', color: 'rgba(245,234,208,0.45)', lineHeight: 1.6, marginBottom: '10px', maxWidth: '160px' }}>
+          <div style={{ fontSize: '7px', color: 'rgba(245,234,208,0.70)', lineHeight: 1.6, marginBottom: '10px', maxWidth: '160px' }}>
             We craft high-performance web experiences that transform businesses and drive real results.
           </div>
           <div style={{ display: 'flex', gap: '6px' }}>
@@ -343,7 +343,7 @@ export default function BeforeAfterSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             style={{
               fontFamily: 'var(--font-body)', fontSize: '0.9rem',
-              color: 'rgba(245,234,208,0.4)', maxWidth: '48ch',
+              color: 'rgba(245,234,208,0.65)', maxWidth: '48ch',
               lineHeight: 1.7, margin: '0 auto',
             }}
           >
@@ -388,7 +388,7 @@ export default function BeforeAfterSection() {
               ].map((p) => (
                 <div key={p} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span style={{ color: '#ef4444', fontSize: '0.75rem', flexShrink: 0 }}>✗</span>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'rgba(245,234,208,0.4)' }}>{p}</span>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'rgba(245,234,208,0.65)' }}>{p}</span>
                 </div>
               ))}
             </div>
@@ -455,7 +455,7 @@ export default function BeforeAfterSection() {
           <span style={{
             fontFamily: 'var(--font-display)',
             fontSize: '0.9rem', fontWeight: 800,
-            color: 'rgba(245,234,208,0.5)',
+            color: 'rgba(245,234,208,0.75)',
             letterSpacing: '0.05em',
           }}>VS</span>
         </motion.div>
@@ -469,7 +469,7 @@ export default function BeforeAfterSection() {
         >
           <p style={{
             fontFamily: 'var(--font-body)', fontSize: '0.9rem',
-            color: 'rgba(245,234,208,0.4)', marginBottom: '1.5rem',
+            color: 'rgba(245,234,208,0.65)', marginBottom: '1.5rem',
           }}>
             Ready to make the switch?
           </p>

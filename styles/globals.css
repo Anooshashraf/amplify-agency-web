@@ -136,7 +136,7 @@ body :where(p, a, li, span, small, label, input, textarea, button) {
 .preloader-label {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
-  color: rgba(245, 234, 208, 0.4);
+  color: rgba(245, 234, 208, 0.65);
   text-transform: uppercase;
 }
 
@@ -180,7 +180,7 @@ body :where(p, a, li, span, small, label, input, textarea, button) {
 
 /* Green glow effects */
 .glow-green {
-  box-shadow: 0 0 40px rgba(34, 197, 94, 0.22), 0 0 80px rgba(34, 197, 94, 0.12);
+  box-shadow: 0 0 40px rgba(34, 197, 94, 0.22), 0 0 80px rgba(34, 197, 94, 0.22);
 }
 
 .text-glow {
@@ -307,9 +307,9 @@ body :where(p, a, li, span, small, label, input, textarea, button) {
 
 .btn-outline:hover {
   border-color: rgba(62, 199, 110, 0.8);
-  background: linear-gradient(180deg, rgba(34, 197, 94, 0.18) 0%, rgba(34, 197, 94, 0.08) 100%);
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.18) 0%, rgba(34, 197, 94, 0.16) 100%);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.24), 0 0 20px rgba(34, 197, 94, 0.12);
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.24), 0 0 20px rgba(34, 197, 94, 0.22);
 }
 
 .btn-outline:hover::after {
@@ -358,7 +358,7 @@ body :where(p, a, li, span, small, label, input, textarea, button) {
 
 /* Dot grid */
 .dot-grid {
-  background-image: radial-gradient(circle, rgba(34, 197, 94, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(34, 197, 94, 0.25) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -395,7 +395,7 @@ body :where(p, a, li, span, small, label, input, textarea, button) {
 /* Input styles */
 .input-field {
   background: rgba(10, 22, 12, 0.6);
-  border: 1px solid rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.25);
   color: var(--cream);
   padding: 1rem 1.25rem;
   border-radius: 0.5rem;
@@ -411,7 +411,7 @@ body :where(p, a, li, span, small, label, input, textarea, button) {
 
 .input-field:focus {
   border-color: rgba(34, 197, 94, 0.5);
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.08);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.16);
 }
 
 /* Testimonial card */

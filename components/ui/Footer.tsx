@@ -121,9 +121,9 @@ function SmallSocialBtn({ icon, href }: { icon: React.ReactNode; href: string })
   return (
     <a href={href} target="_blank" rel="noopener noreferrer"
       className="flex items-center justify-center w-7 h-7 rounded-lg transition-all duration-250"
-      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(34,197,94,0.14)', color: 'rgba(245,234,208,0.45)', textDecoration: 'none' }}
+      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(34,197,94,0.14)', color: 'rgba(245,234,208,0.70)', textDecoration: 'none' }}
       onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(34,197,94,0.12)'; el.style.borderColor = 'rgba(34,197,94,0.4)'; el.style.color = 'var(--green-bright)' }}
-      onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.04)'; el.style.borderColor = 'rgba(34,197,94,0.14)'; el.style.color = 'rgba(245,234,208,0.45)' }}
+      onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.04)'; el.style.borderColor = 'rgba(34,197,94,0.14)'; el.style.color = 'rgba(245,234,208,0.70)' }}
     >
       {icon}
     </a>
@@ -134,10 +134,10 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   return (
     <Link href={href} style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'all 0.2s' }}
       onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.color = 'var(--green-bright)'; el.style.paddingLeft = '5px' }}
-      onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.color = 'rgba(245,234,208,0.4)'; el.style.paddingLeft = '0' }}
+      onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.color = 'rgba(245,234,208,0.65)'; el.style.paddingLeft = '0' }}
     >
       <span style={{ color: 'rgba(34,197,94,0.35)', fontSize: '0.55rem' }}>▸</span>
-      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'rgba(245,234,208,0.4)' }}>
+      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'rgba(245,234,208,0.65)' }}>
         {children}
       </span>
     </Link>
@@ -148,7 +148,7 @@ function ContactRow({ icon, children }: { icon: React.ReactNode; children: React
   return (
     <div className="flex items-start gap-3">
       <div style={{ color: 'var(--green-bright)', flexShrink: 0, marginTop: '1px' }}>{icon}</div>
-      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'rgba(245,234,208,0.45)', lineHeight: 1.55 }}>
+      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'rgba(245,234,208,0.70)', lineHeight: 1.55 }}>
         {children}
       </span>
     </div>
@@ -181,7 +181,7 @@ export default function Footer() {
                 Amplify
               </span>
             </Link>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'rgba(245,234,208,0.4)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'rgba(245,234,208,0.65)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
               Established 2020, Amplify Agency is a professional web & app development studio. We build AI-driven digital products for startups and enterprises across 8+ countries.
             </p>
             <div className="flex items-center gap-2">

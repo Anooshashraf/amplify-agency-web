@@ -117,7 +117,7 @@ export default function ServicesSection() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '0.9rem',
-              color: 'rgba(245,234,208,0.45)',
+              color: 'rgba(245,234,208,0.70)',
               maxWidth: '36ch',
               lineHeight: 1.7,
             }}
@@ -279,7 +279,7 @@ export default function ServicesSection() {
                         fontFamily: 'var(--font-display)',
                         fontSize: '0.95rem',
                         fontWeight: 700,
-                        color: i === active ? 'var(--cream)' : 'rgba(245,234,208,0.55)',
+                        color: i === active ? 'var(--cream)' : 'rgba(245,234,208,0.78)',
                         transition: 'color 0.3s',
                         letterSpacing: '-0.01em',
                       }}>
@@ -299,7 +299,7 @@ export default function ServicesSection() {
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path
                           d="M2 10L10 2M10 2H5M10 2V7"
-                          stroke={i === active ? 'var(--green-bright)' : 'rgba(245,234,208,0.4)'}
+                          stroke={i === active ? 'var(--green-bright)' : 'rgba(245,234,208,0.65)'}
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -325,7 +325,7 @@ export default function ServicesSection() {
                         <p style={{
                           fontFamily: 'var(--font-body)',
                           fontSize: '0.82rem',
-                          color: 'rgba(245,234,208,0.5)',
+                          color: 'rgba(245,234,208,0.75)',
                           lineHeight: 1.75,
                           marginBottom: '0.85rem',
                         }}>

@@ -73,7 +73,7 @@ export default function HeroSection() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.7rem',
                 letterSpacing: '0.2em',
-                color: 'rgba(245,234,208,0.5)',
+                color: 'rgba(245,234,208,0.75)',
                 textTransform: 'uppercase',
               }}
             >
@@ -123,7 +123,7 @@ export default function HeroSection() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: 'clamp(0.82rem, 1.2vw, 0.95rem)',
-                  color: 'rgba(245,234,208,0.5)',
+                  color: 'rgba(245,234,208,0.75)',
                   maxWidth: '42ch',
                   lineHeight: 1.75,
                   marginBottom: '2rem',
@@ -178,7 +178,7 @@ export default function HeroSection() {
                       style={{
                         fontFamily: 'var(--font-body)',
                         fontSize: '0.68rem',
-                        color: 'rgba(245,234,208,0.4)',
+                        color: 'rgba(245,234,208,0.65)',
                         letterSpacing: '0.08em',
                         marginTop: '0.2rem',
                       }}

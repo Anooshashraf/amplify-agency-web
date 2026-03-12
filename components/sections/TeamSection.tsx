@@ -71,7 +71,7 @@ export default function TeamSection() {
             transition={{ duration: 0.8, delay: 0.15 }}
             style={{
               fontFamily: 'var(--font-body)', fontSize: '0.9rem',
-              color: 'rgba(245,234,208,0.4)', maxWidth: '38ch', lineHeight: 1.7,
+              color: 'rgba(245,234,208,0.65)', maxWidth: '38ch', lineHeight: 1.7,
             }}
           >
             A tight-knit team of engineers, designers, and strategists who care deeply about craft and outcomes.
@@ -106,7 +106,7 @@ export default function TeamSection() {
             }}>Built together. Shipped with pride.</span>
             <span style={{
               fontFamily: 'var(--font-body)', fontSize: '0.82rem',
-              color: 'rgba(245,234,208,0.45)', marginTop: '0.3rem', display: 'block',
+              color: 'rgba(245,234,208,0.70)', marginTop: '0.3rem', display: 'block',
             }}>Every project is a full-team effort from day one.</span>
           </div>
           <div style={{
@@ -153,7 +153,7 @@ export default function TeamSection() {
               }}>Strategy-first thinking.</span>
               <span style={{
                 fontFamily: 'var(--font-body)', fontSize: '0.76rem',
-                color: 'rgba(245,234,208,0.45)',
+                color: 'rgba(245,234,208,0.70)',
               }}>Every project starts with deep understanding.</span>
             </div>
           </motion.div>
@@ -188,7 +188,7 @@ export default function TeamSection() {
                   <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--green-bright)', letterSpacing: '0.04em', marginBottom: '0.3rem' }}>
                     {member.title}
                   </div>
-                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.76rem', color: 'rgba(245,234,208,0.4)', lineHeight: 1.5 }}>
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.76rem', color: 'rgba(245,234,208,0.65)', lineHeight: 1.5 }}>
                     {member.bio}
                   </div>
                 </div>

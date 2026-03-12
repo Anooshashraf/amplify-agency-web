@@ -129,7 +129,7 @@ export default function WorkSection() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.9rem',
-                color: 'rgba(245,234,208,0.48)',
+                color: 'rgba(245,234,208,0.72)',
                 maxWidth: '40ch',
                 lineHeight: 1.8,
                 marginBottom: '1.5rem',
@@ -139,7 +139,7 @@ export default function WorkSection() {
             </p>
 
             <div className="flex items-center gap-3 mb-5">
-              <span style={{ fontFamily: 'var(--font-number)', fontSize: '0.66rem', color: 'rgba(245,234,208,0.42)', letterSpacing: '0.09em' }}>
+              <span style={{ fontFamily: 'var(--font-number)', fontSize: '0.66rem', color: 'rgba(245,234,208,0.65)', letterSpacing: '0.09em' }}>
                 {active.id} / {String(projects.length).padStart(2, '0')}
               </span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.62rem', color: 'rgba(245,234,208,0.35)', letterSpacing: '0.06em' }}>

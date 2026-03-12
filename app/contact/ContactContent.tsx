@@ -168,7 +168,7 @@ export default function ContactContent() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '0.95rem',
-                  color: 'rgba(245,234,208,0.45)',
+                  color: 'rgba(245,234,208,0.70)',
                   lineHeight: 1.8,
                   marginBottom: '3rem',
                   maxWidth: '40ch',
@@ -257,7 +257,7 @@ export default function ContactContent() {
                   >
                     Message Sent!
                   </h3>
-                  <p style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,234,208,0.5)', fontSize: '0.9rem' }}>
+                  <p style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,234,208,0.75)', fontSize: '0.9rem' }}>
                     We'll get back to you within 24 hours. Talk soon!
                   </p>
                 </div>
