@@ -202,9 +202,9 @@ export default function Footer() {
           </div>
 
           {/* 3 — Find Us */}
-          <div>
+          <div className="ml-8">
             <FooterHeading>Find Us</FooterHeading>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4 ml-2">
               <div>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.55rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--green-bright)', marginBottom: '0.25rem' }}>Office</p>
                 <ContactRow icon={<IconPin />}> Karachi, Pakistan.</ContactRow>
