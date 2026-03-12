@@ -18,7 +18,7 @@ const services = [
     description:
       'Blazing-fast, SEO-optimised web experiences built with Next.js, React, and modern stacks. From landing pages to complex SaaS platforms.',
     tech: ['Next.js', 'React', 'TypeScript', 'Node.js'],
-    imgSrc: '/images/devops.jpg',
+    imgSrc: '/images/web-development.jpg',
   },
   {
     id: '02',
@@ -26,7 +26,7 @@ const services = [
     description:
       'Cross-platform iOS and Android apps with React Native. Native performance, beautiful UI, seamless user experience.',
     tech: ['React Native', 'Expo', 'Swift', 'Kotlin'],
-    imgSrc: '/images/mobile-app.jpg',
+    imgSrc: '/images/Mobile-App-Development.png',
   },
   {
     id: '03',
@@ -34,7 +34,7 @@ const services = [
     description:
       'Research-driven interfaces that convert. Every pixel crafted with intention, from wireframes to high-fidelity prototypes.',
     tech: ['Figma', 'Prototyping', 'User Research', 'Design Systems'],
-    imgSrc: '/images/ui-ux.jpg',
+    imgSrc: '/images/UI-UX_design.png',
   },
   {
     id: '04',
@@ -42,23 +42,24 @@ const services = [
     description:
       'Scalable server architecture, REST and GraphQL APIs, database design, and cloud infrastructure that handles any load.',
     tech: ['Node.js', 'PostgreSQL', 'AWS', 'Docker'],
-    imgSrc: '/images/ecommerce.webp',
+    imgSrc: '/images/API-integration.webp',
   },
   {
-    id: '05',
-    title: 'SEO & Performance',
+      id: '05',
+    title: 'AI Integration',
     description:
-      'Speed optimisations, technical SEO, and performance audits that boost rankings and keep users engaged. We make your site fast and findable.',
+      'Embed real intelligence into your product. LLM integrations, custom model fine-tuning, RAG pipelines, and AI-powered features that users love.',
     tech: ['OpenAI', 'LangChain', 'Python', 'TensorFlow'],
-    imgSrc: '/images/seo.jpg',
+    imgSrc: '/images/AI-Integration.jpg',
   },
 ]
 
 export default function ServicesSection() {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState<number | null>(null)
+  const [clicked, setClicked] = useState(false)
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true })
 
-  const activeService = services[active]
+  const activeService = active !== null ? services[active] : null
 
   return (
     <section
@@ -146,27 +147,84 @@ export default function ServicesSection() {
               }}
             />
 
-            <div className="relative w-full h-full" style={{ zIndex: 2, minHeight: '480px' }}>
-              <ParticleGlobe className="absolute inset-0" particleCount={3200} />
+              <style>{`
+                @keyframes svc-float {
+                  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+                  50% { transform: translateY(-10px) rotate(1deg); }
+                }
+                .svc-img-float { animation: svc-float 5s ease-in-out infinite; }
+              `}</style>
 
-              {/* Service number badge */}
-              <div
-                className="absolute top-4 left-4 w-10 h-10 rounded-full flex items-center justify-center"
-                style={{
-                  background: 'rgba(34,197,94,0.12)',
-                  border: '1px solid rgba(34,197,94,0.30)',
-                  zIndex: 3,
-                }}
-              >
-                <span style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '0.75rem',
-                  fontWeight: 800,
-                  color: 'var(--green-bright)',
-                }}>
-                  {activeService.id}
-                </span>
-              </div>
+            <div className="relative w-full h-full" style={{ zIndex: 2, minHeight: '480px' }}>
+              {/* Globe — visible in default (unclicked) state */}
+              <AnimatePresence>
+                {!clicked && (
+                  <motion.div
+                    key="globe"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0"
+                  >
+                    <ParticleGlobe className="absolute inset-0" particleCount={3200} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Service image — appears on click, smaller & centred */}
+              <AnimatePresence mode="wait">
+                {clicked && activeService && (
+                  <motion.div
+                    key={`img-${active}`}
+                    initial={{ opacity: 0, y: 24, scale: 0.92 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -16, scale: 0.95 }}
+                    transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{ zIndex: 4 }}
+                  >
+                    <div
+                      className="svc-img-float relative rounded-2xl overflow-hidden"
+                      style={{
+                        width: '78%',
+                        maxWidth: '340px',
+                        aspectRatio: '4/3',
+                        boxShadow: '0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(34,197,94,0.18)',
+                      }}
+                    >
+                      <img
+                        src={activeService.imgSrc}
+                        alt={activeService.title}
+                        className="w-full h-full object-cover"
+                        style={{ filter: 'brightness(0.72)' }}
+                      />
+                      <div
+                        className="absolute inset-0"
+                        style={{ background: 'linear-gradient(160deg, rgba(6,20,11,0.45) 0%, transparent 55%)' }}
+                      />
+                      <div className="absolute bottom-4 left-4">
+                        <span style={{
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '0.6rem',
+                          letterSpacing: '0.18em',
+                          color: 'var(--green-bright)',
+                          textTransform: 'uppercase',
+                          display: 'block',
+                          marginBottom: '0.2rem',
+                        }}>{activeService.id}</span>
+                        <span style={{
+                          fontFamily: 'var(--font-display)',
+                          fontSize: '1.1rem',
+                          fontWeight: 800,
+                          color: 'var(--cream)',
+                          letterSpacing: '-0.02em',
+                        }}>{activeService.title}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
 
@@ -178,7 +236,15 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.1 * i + 0.3 }}
-                onClick={() => setActive(i)}
+                onClick={() => {
+                  if (i === active && clicked) {
+                    setActive(null)
+                    setClicked(false)
+                  } else {
+                    setActive(i)
+                    setClicked(true)
+                  }
+                }}
                 className="relative cursor-pointer rounded-xl overflow-hidden transition-all duration-400"
                 style={{
                   background: i === active ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.015)',
@@ -195,34 +261,6 @@ export default function ServicesSection() {
                     boxShadow: i === active ? '0 0 10px var(--green-bright)' : 'none',
                   }}
                 />
-
-                {/* Image strip — visible in main card content when active */}
-                <AnimatePresence>
-                  {i === active && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: '100px' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                      className="relative w-full overflow-hidden"
-                    >
-                      <img
-                        src={service.imgSrc}
-                        alt={service.title}
-                        className="w-full object-cover"
-                        style={{ height: '100px', filter: 'brightness(0.55)', objectPosition: 'center 30%' }}
-                      />
-                      <div
-                        className="absolute inset-0"
-                        style={{ background: 'linear-gradient(to bottom, transparent 20%, var(--dark-2) 100%)' }}
-                      />
-                      <div
-                        className="absolute inset-0"
-                        style={{ background: 'rgba(34,197,94,0.06)' }}
-                      />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
 
                 <div className="px-5 py-4">
                   {/* Card header */}

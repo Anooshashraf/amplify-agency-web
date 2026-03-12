@@ -15,7 +15,7 @@ const allServices = [
       'Blazing-fast, SEO-optimised web experiences. From marketing sites to complex SaaS platforms, we build for performance, scalability, and conversion.',
     features: ['Next.js / React', 'Server-side rendering', 'SEO optimisation', 'Performance tuning', 'CMS integration'],
     accent: 'var(--green-bright)',
-    imgSrc: '/images/devops.jpg',
+    imgSrc: '/images/web-development.jpg',
   },
   {
     id: '02',
@@ -24,7 +24,7 @@ const allServices = [
       'Cross-platform iOS & Android apps with React Native. Native-level performance with a single codebase. App Store and Play Store ready.',
     features: ['React Native', 'Expo', 'Push notifications', 'Offline support', 'In-app purchases'],
     accent: 'var(--cream)',
-    imgSrc: '/images/mobile-app.jpg',
+    imgSrc: '/images/Mobile-App-Development.png',
   },
   {
     id: '03',
@@ -33,7 +33,7 @@ const allServices = [
       'User interfaces that convert. We conduct real research, build design systems, and create high-fidelity prototypes before a single line of code is written.',
     features: ['User research', 'Wireframing', 'High-fidelity design', 'Design systems', 'Usability testing'],
     accent: 'var(--green-bright)',
-    imgSrc: '/images/ui-ux.jpg',
+    imgSrc: '/images/UI-UX_design.png',
   },
   {
     id: '04',
@@ -42,7 +42,7 @@ const allServices = [
       'Robust, scalable server infrastructure. REST and GraphQL APIs, database architecture, authentication, and cloud deployment.',
     features: ['Node.js / Python', 'PostgreSQL / MongoDB', 'REST & GraphQL', 'AWS / Vercel', 'Docker / CI/CD'],
     accent: 'var(--cream)',
-    imgSrc: '/images/ecommerce.webp',
+    imgSrc: '/images/API-integration.webp',
   },
   {
     id: '05',
@@ -51,7 +51,7 @@ const allServices = [
       'Embed real intelligence into your product. LLM integrations, custom model fine-tuning, RAG pipelines, and AI-powered features that users love.',
     features: ['OpenAI / Claude API', 'LangChain', 'Vector databases', 'Fine-tuning', 'AI agents'],
     accent: 'var(--green-bright)',
-    imgSrc: '/images/seo.jpg',
+    imgSrc: '/images/AI-Integration.jpg',
   },
   {
     id: '06',
@@ -60,7 +60,7 @@ const allServices = [
       '24/7 support, monitoring, updates, and ongoing development. We don\'t disappear after launch — we grow with you.',
     features: ['24/7 monitoring', 'Bug fixes', 'Feature updates', 'Performance reports', 'Dedicated Slack channel'],
     accent: 'var(--cream)',
-    imgSrc: '/images/team_collaboration.png',
+    imgSrc: '/images/team_meeting.png',
   },
 ]
 
