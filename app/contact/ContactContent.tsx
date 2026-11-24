@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 
 type FormData = {
-  name: string
+  name: strings
   email: string
   company: string
   budget: string
