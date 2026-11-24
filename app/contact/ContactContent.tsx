@@ -14,10 +14,10 @@ type FormData = {
 }
 
 const budgets = [
-  'Under Rs20k',
-  'Rs20k – Rs50k',
-  'Rs50k – Rs100k',
-  'Over Rs100k',
+  'Under $100',
+  '$100 – $499',
+  '$500 – $999',
+  '$1,000+',
 ]
 
 const DotWorldMap = dynamic(() => import('@/components/three/DotWorldMap'), {
