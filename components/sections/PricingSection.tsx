@@ -9,77 +9,66 @@ import Link from 'next/link'
 const plans = [
   {
     id: '01',
-    name: 'Launch',
-    tagline: 'For startups & MVPs',
-    price: { monthly: 20000, annual: 18000 },
-    description: 'Everything you need to go from idea to a polished, live product fast.',
-    cta: 'Start Launch',
-    ctaHref: '/contact?plan=launch',
+    name: 'Data Analytics',
+    tagline: 'Dashboards & insights',
+    price: 100,
+    description: 'Turn your data into clear, actionable insights with custom dashboards and analytics.',
+    cta: 'Start Analytics',
+    ctaHref: '/contact?plan=data-analytics',
     highlight: false,
     features: [
-      { text: 'Up to 4 pages / screens', included: true },
-      { text: 'Responsive web design', included: true },
-      { text: 'Custom UI components', included: true },
-      { text: 'Basic SEO setup', included: true },
-      { text: 'Contact / lead form', included: true },
-      { text: '2 rounds of revisions', included: true },
-      { text: 'CMS integration', included: false },
-      { text: 'API / backend development', included: false },
-      { text: 'Dedicated project manager', included: false },
+      { text: 'Custom interactive dashboard', included: true },
+      { text: 'Data visualization & reporting', included: true },
+      { text: 'Connect your data sources', included: true },
+      { text: 'Key metrics and KPI tracking', included: true },
+      { text: 'Responsive dashboard design', included: true },
+      { text: 'Analytics setup', included: true },
     ],
-    deliveryWeeks: '2–3',
+    deliveryWeeks: '1–2',
     accentColor: 'rgba(245,234,208,0.78)',
     borderColor: 'rgba(245,234,208,0.08)',
     bgGlow: 'rgba(245,234,208,0.02)',
   },
   {
     id: '02',
-    name: 'Scale',
-    tagline: 'Most popular',
-    price: { monthly: 50000, annual: 44000 },
-    description: 'Full-stack builds with custom motion, integrations, and a dedicated team.',
-    cta: 'Start Scale',
-    ctaHref: '/contact?plan=scale',
+    name: 'Website Design',
+    tagline: 'Beautiful, responsive websites',
+    price: 500,
+    description: 'A polished, user-friendly website designed to showcase your brand and grow your business.',
+    cta: 'Start Website',
+    ctaHref: '/contact?plan=website-design',
     highlight: true,
     features: [
-      { text: 'Up to 10 pages / screens', included: true },
+      { text: 'Custom website design', included: true },
       { text: 'Responsive web design', included: true },
-      { text: 'Custom UI components', included: true },
-      { text: 'Advanced SEO + analytics', included: true },
-      { text: 'Contact / lead form', included: true },
-      { text: 'Unlimited revisions', included: true },
-      { text: 'CMS integration', included: true },
-      { text: 'Custom animations', included: true },
-      { text: 'API / backend development', included: false },
-      { text: 'Dedicated project manager', included: false },
+      { text: 'Up to 5 pages', included: true },
+      { text: 'Contact form integration', included: true },
+      { text: 'Basic SEO setup', included: true },
+      { text: 'Content management setup', included: true },
     ],
-    deliveryWeeks: '6–8',
+    deliveryWeeks: '2–4',
     accentColor: '#3ec76e',
     borderColor: 'rgba(62,199,110,0.25)',
     bgGlow: 'rgba(62,199,110,0.04)',
   },
   {
     id: '03',
-    name: 'Enterprise',
-    tagline: 'For ambitious brands',
-    price: { monthly: null, annual: null },
-    description: 'End-to-end product engineering — design, build, ship, and scale.',
-    cta: 'Let\'s Talk',
-    ctaHref: '/contact?plan=enterprise',
+    name: 'Mobile & Web Apps',
+    tagline: 'Full-stack applications',
+    price: 1000,
+    description: 'Custom mobile and web applications built around your product, users, and goals.',
+    cta: 'Start Your App',
+    ctaHref: '/contact?plan=full-stack-app',
     highlight: false,
     features: [
-      { text: 'Unlimited pages / screens', included: true },
-      { text: 'Responsive web design', included: true },
-      { text: 'Custom UI components', included: true },
-      { text: 'Advanced SEO + analytics', included: true },
-      { text: 'Contact / lead form', included: true },
-      { text: 'Unlimited revisions', included: true },
-      { text: 'CMS integration', included: true },
-      { text: 'Custom animations', included: true },
-      { text: 'API / backend development', included: true },
-      { text: 'Dedicated project manager', included: true },
+      { text: 'Custom mobile or web application', included: true },
+      { text: 'Frontend and backend development', included: true },
+      { text: 'API and database integration', included: true },
+      { text: 'User authentication', included: true },
+      { text: 'Responsive user interface', included: true },
+      { text: 'Testing and deployment support', included: true },
     ],
-    deliveryWeeks: 'Custom',
+    deliveryWeeks: '4–8',
     accentColor: 'rgba(245,234,208,0.78)',
     borderColor: 'rgba(245,234,208,0.08)',
     bgGlow: 'rgba(245,234,208,0.02)',
@@ -105,28 +94,16 @@ function Check({ color }: { color: string }) {
   )
 }
 
-function Cross() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
-      <circle cx="7" cy="7" r="6.5" stroke="rgba(245,234,208,0.1)" />
-      <path d="M5 5l4 4M9 5l-4 4" stroke="rgba(245,234,208,0.2)" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  )
-}
-
 // ─── Single pricing card ──────────────────────────────────────────────────────
 function PricingCard({
   plan,
   index,
-  billing,
   inView,
 }: {
   plan: typeof plans[0]
   index: number
-  billing: 'monthly' | 'annual'
   inView: boolean
 }) {
-  const price = plan.price[billing]
   const [hovered, setHovered] = useState(false)
 
   return (
@@ -272,8 +249,18 @@ function PricingCard({
 
         {/* Price */}
         <div style={{ marginBottom: '28px' }}>
-          {price !== null ? (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <div>
+              <span style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.72rem',
+                color: 'rgba(245,234,208,0.35)',
+                display: 'block',
+                lineHeight: 1.3,
+                marginBottom: '6px',
+              }}>
+                Starting from
+              </span>
               <span style={{
                 fontFamily: 'var(--font-number)',
                 fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
@@ -282,51 +269,10 @@ function PricingCard({
                 letterSpacing: '-0.04em',
                 lineHeight: 1,
               }}>
-                Rs{price.toLocaleString()}
+                ${plan.price.toLocaleString()}
               </span>
-                <div>
-                  <span style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '0.72rem',
-                    color: 'rgba(245,234,208,0.35)',
-                    display: 'block',
-                    lineHeight: 1.3,
-                  }}>
-                    / project
-                  </span>
-                  {billing === 'annual' && (
-                    <span style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '0.6rem',
-                      color: plan.highlight ? '#3ec76e' : 'rgba(245,234,208,0.3)',
-                      letterSpacing: '0.04em',
-                    }}>
-                      billed annually
-                    </span>
-                  )}
-                </div>
             </div>
-          ) : (
-            <div>
-              <span style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
-                fontWeight: 800,
-                color: 'var(--cream)',
-                letterSpacing: '-0.03em',
-              }}>
-                Custom
-              </span>
-              <p style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.7rem',
-                color: 'rgba(245,234,208,0.35)',
-                marginTop: '4px',
-              }}>
-                Scoped to your project
-              </p>
-            </div>
-          )}
+          </div>
         </div>
 
         {/* Divider */}
@@ -340,13 +286,12 @@ function PricingCard({
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: '28px', display: 'flex', flexDirection: 'column', gap: '11px', flex: 1 }}>
           {plan.features.map((f, fi) => (
             <li key={fi} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              {f.included ? <Check color={plan.accentColor} /> : <Cross />}
+              {f.included && <Check color={plan.accentColor} />}
               <span style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.76rem',
                 color: f.included ? 'rgba(245,234,208,0.7)' : 'rgba(245,234,208,0.22)',
                 lineHeight: 1.4,
-                textDecoration: f.included ? 'none' : 'none',
               }}>
                 {f.text}
               </span>
@@ -376,7 +321,7 @@ function PricingCard({
           }}>
             Delivered in{' '}
             <span style={{ color: plan.accentColor, fontWeight: 600 }}>
-              {plan.deliveryWeeks} {plan.deliveryWeeks === 'Custom' ? '' : 'weeks'}
+              {plan.deliveryWeeks} weeks
             </span>
           </span>
         </div>
@@ -413,10 +358,7 @@ function PricingCard({
 
 // ─── Main section ─────────────────────────────────────────────────────────────
 export default function PricingSection() {
-  const [billing, setBilling] = useState<'monthly' | 'annual'>('monthly')
   const { ref, inView } = useInView({ threshold: 0.08, triggerOnce: true })
-
-  const savings = Math.round(((2900 - 2400) / 2900) * 100)
 
   return (
     <section
@@ -471,8 +413,7 @@ export default function PricingSection() {
               Transparent pricing
             </span>
 
-            {/* Heading + billing toggle on same row */}
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px' }}>
+            <div>
               <h2 style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2rem, 4.5vw, 3.6rem)',
@@ -485,56 +426,6 @@ export default function PricingSection() {
                 Simple plans,<br />
                 <em style={{ fontStyle: 'italic', color: 'var(--green-bright)' }}>no surprises</em>
               </h2>
-
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                padding: '6px',
-                borderRadius: '12px',
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.07)',
-                flexShrink: 0,
-                alignSelf: 'flex-start',
-                marginTop: '8px',
-              }}>
-                {(['monthly', 'annual'] as const).map((b) => (
-                  <button
-                    key={b}
-                    onClick={() => setBilling(b)}
-                    style={{
-                      padding: '8px 18px',
-                      borderRadius: '8px',
-                      border: 'none',
-                      background: billing === b ? 'rgba(62,199,110,0.15)' : 'transparent',
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '0.74rem',
-                      fontWeight: billing === b ? 600 : 400,
-                      color: billing === b ? '#3ec76e' : 'rgba(245,234,208,0.35)',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      letterSpacing: '0.03em',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    {b === 'monthly' ? 'Monthly' : 'Annual'}
-                    {b === 'annual' && (
-                      <span style={{
-                        marginLeft: '6px',
-                        padding: '2px 6px',
-                        borderRadius: '999px',
-                        background: billing === 'annual' ? '#3ec76e' : 'rgba(62,199,110,0.2)',
-                        color: billing === 'annual' ? '#020a06' : '#3ec76e',
-                        fontSize: '0.55rem',
-                        fontWeight: 700,
-                        letterSpacing: '0.06em',
-                      }}>
-                        -{savings}%
-                      </span>
-                    )}
-                  </button>
-                ))}
-              </div>
             </div>
           </div>
         </motion.div>
@@ -553,7 +444,6 @@ export default function PricingSection() {
               key={plan.id}
               plan={plan}
               index={i}
-              billing={billing}
               inView={inView}
             />
           ))}
